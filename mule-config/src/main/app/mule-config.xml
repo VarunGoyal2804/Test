@@ -9,6 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
     <http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/>
     <flow name="maven-testFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/maven" doc:name="HTTP"/>
+        <timer-interceptor />
         <set-payload value="#[' Hi Varun']" doc:name="Set Payload"/>
     </flow>
 </mule>
